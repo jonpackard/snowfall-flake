@@ -19,12 +19,15 @@
     config,
     ...
 }:
+with lib; let
+  cfg = config.gui-apps;
+in {
+  options.gui-apps = {
+    enable = mkEnableOption "gui-apps";
+  };
 
-{
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
       pkgs.firefox
       pkgs.remmina
       pkgs.bitwarden
@@ -50,5 +53,6 @@
       pkgs.gnome.gnome-tweaks
       pkgs.signal-desktop
       pkgs.freerdp
-  ];
+    ];
+  };
 }
