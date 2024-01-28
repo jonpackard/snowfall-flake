@@ -6,5 +6,5 @@
 {
   powerManagement.cpuFreqGovernor = "ondemand";
   services.thermald.enable = true;
-  services.xserver.displayManager.gdm.autoSuspend = true; # this is the default
+  services.xserver.displayManager.gdm.autoSuspend = false;
 }
