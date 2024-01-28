@@ -1,6 +1,7 @@
 {
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+        unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
         snowfall-lib = {
             url = "github:snowfallorg/lib";
@@ -17,5 +18,9 @@
             # in the next section for information on how you can move your
             # Nix files to a separate directory.
             src = ./.;
+
+            channels-config = {
+              allowUnfree = true;
+            };
         };
 }
