@@ -1,3 +1,7 @@
+# Quick reference:
+## Snowfall examples https://github.com/jakehamilton/config
+## Snowfall website: https://snowfall.org
+
 {
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
