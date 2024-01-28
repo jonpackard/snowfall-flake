@@ -9,14 +9,20 @@
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release
 
         snowfall-lib = {
-            url = "github:snowfallorg/lib";
-            inputs.nixpkgs.follows = "nixpkgs";
+          url = "github:snowfallorg/lib";
+          inputs.nixpkgs.follows = "nixpkgs";
         };
 
         home-manager = {
           url = "github:nix-community/home-manager/release-23.11";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        vscode-server = {
+          url = "github:msteen/nixos-vscode-server";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
     };
 
     outputs = inputs:
@@ -32,5 +38,10 @@
             channels-config = {
               allowUnfree = true;
             };
+
+            # Add modules to a specific home.
+            homes.users."jonathan@jon-tower".modules = with inputs; [
+              vscode-server.homeModules.default
+            ];
         };
 }

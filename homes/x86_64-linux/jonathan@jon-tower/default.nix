@@ -18,9 +18,13 @@
     config,
     ...
 }:
+with lib;
 {
-  # Enable gui apps
+  # Select home modules
   gui-apps.enable = true;
+
+  # Enable vscode-server service
+  services.vscode-server.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
