@@ -33,6 +33,9 @@
   # Enable Jellyfin server module
   jellyfin.enable = true;
 
+  # Enable Tailscale VPN module
+  tailscale.enable = true;
+
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -171,11 +174,6 @@
   };
   
   programs.gamemode.enable = true;
-
-  # Tailscale VPN
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "both";
-  # services.tailscale.package = unstable.tailscale; # switched to overlay
 
   # ==START NVIDIA==
 
