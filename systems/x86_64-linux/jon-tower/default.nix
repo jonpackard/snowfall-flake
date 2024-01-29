@@ -26,11 +26,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Enable Jellyfin server
-      ./jellyfin.nix
       # Enable power saving
       ./powersaving.nix
     ];
+
+  # Enable Jellyfin server module
+  jellyfin.enable = true;
 
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

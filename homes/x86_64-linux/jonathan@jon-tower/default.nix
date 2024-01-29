@@ -23,8 +23,8 @@ with lib;
   # Select home modules
   gui-apps.enable = true;
 
-  # Enable vscode-server service
-  services.vscode-server.enable = true;
+  # Enable vscode-server service (external module)
+  # services.vscode-server.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
