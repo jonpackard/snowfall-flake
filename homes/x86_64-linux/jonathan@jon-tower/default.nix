@@ -22,6 +22,7 @@ with lib;
 {
   # Select home modules
   gui-apps.enable = true;
+  vr.enable = true;
 
   # Enable vscode-server service (external module)
   # services.vscode-server.enable = true;
