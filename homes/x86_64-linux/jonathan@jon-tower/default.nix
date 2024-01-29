@@ -23,6 +23,7 @@ with lib;
   # Select home modules
   gui-apps.enable = true;
   vr.enable = true;
+  cli-apps.enable = true;
 
   # Enable vscode-server service (external module)
   # services.vscode-server.enable = true;
@@ -40,37 +41,6 @@ with lib;
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-      pkgs.tree
-      pkgs.tmux
-      pkgs.nmap
-      pkgs.wol
-      pkgs.podman-compose
-      pkgs.distrobox
-      pkgs.p7zip
-      pkgs.fortune
-      pkgs.neofetch
-      pkgs.dig
-      pkgs.usbutils
-      pkgs.pciutils
-      pkgs.psmisc
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
