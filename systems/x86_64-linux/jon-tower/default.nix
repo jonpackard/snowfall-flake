@@ -36,6 +36,9 @@
   # Enable Tailscale VPN module
   tailscale.enable = true;
 
+  # Enable Gnome with X11 module
+  gnome-x11.enable = true;
+
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -77,19 +80,6 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.wayland = false; # Disable Wayland. Use X11 instead.
-  
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e,caps:escape";
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -100,9 +90,6 @@
     default-sample-rate = 48000; # SteamVR sound fix
     alternate-sample-rate = 48000; # SteamVR sound fix
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
   
   hardware.logitech.wireless = {
     enable = true;
