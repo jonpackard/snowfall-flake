@@ -102,9 +102,6 @@
     enableGraphical = true;
   };
 
-  # Allow non-free packages
-  # nixpkgs.config.allowUnfree = true; # Needed to remove for snowfall-lib
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jonathan = {
     isNormalUser = true;
@@ -118,10 +115,6 @@
     # extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     # User packages defined in home-manager.
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  # Created alias... alias nixsearch="nix --extra-experimental-features \"nix-command flakes\" search nixpkgs"
   
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -133,16 +126,6 @@
     hplip
     cryptsetup
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
