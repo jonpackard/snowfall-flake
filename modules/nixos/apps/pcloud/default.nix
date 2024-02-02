@@ -1,4 +1,3 @@
-# This defines packages that should only be installed on a system with a GUI.
 {
     # Snowfall Lib provides a customized `lib` instance with access to your flake's library
     # as well as the libraries available from your flake's inputs.
@@ -20,38 +19,20 @@
     ...
 }:
 with lib; let
-  cfg = config.gui-apps;
+  cfg = config.pcloud;
 in {
-  options.gui-apps = {
-    enable = mkEnableOption "gui-apps";
+  options.pcloud = {
+    enable = mkEnableOption "pcloud";
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      pkgs.firefox
-      pkgs.remmina
-      pkgs.bitwarden
-      pkgs.cryptomator
-      pkgs.element
-      pkgs.notepadqq
-      pkgs.vscodium
-      pkgs.element-desktop
-      pkgs.prusa-slicer
-      pkgs.cura
-      pkgs.blender
-      pkgs.freecad
-      pkgs.appimage-run
-      pkgs.anydesk
-      pkgs.discord
-      pkgs.jellyfin-mpv-shim
-      pkgs.vlc
-      pkgs.prismlauncher
-      pkgs.virt-manager
-      pkgs.gimp
-      pkgs.inkscape
-      pkgs.gnome.gnome-tweaks
-      pkgs.signal-desktop
-      pkgs.freerdp
+    # Enable FUSE filesystems - needed by pcloud
+    boot.supportedFilesystems = [ "fuse" ];
+    boot.kernelModules = [ "fuse" ];
+
+    environment.systemPackages = with pkgs; [
+      fuse
+      pcloud
     ];
   };
 }

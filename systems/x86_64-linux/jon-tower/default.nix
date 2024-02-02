@@ -42,6 +42,9 @@
   # Enable nvidia driver module
   nvidia.enable = true;
 
+  # Enable pcloud app module
+  pcloud.enable = true;
+
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -98,10 +101,6 @@
     enable = true;
     enableGraphical = true;
   };
-  
-  # Enable FUSE filesystems - needed by pcloud
-  boot.supportedFilesystems = [ "fuse" ];
-  boot.kernelModules = [ "fuse" ];
 
   # Allow non-free packages
   # nixpkgs.config.allowUnfree = true; # Needed to remove for snowfall-lib
@@ -127,7 +126,6 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    fuse # needed by pcloud
     libimobiledevice # Needed for iPhone integration
     ifuse # Needed for iPhone integration
     home-manager
