@@ -7,6 +7,7 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
         unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release
+        nur.url = "github:nix-community/NUR"; # Needed for darwin
 
         snowfall-lib = {
           url = "github:snowfallorg/lib";
@@ -20,6 +21,11 @@
 
         vscode-server = {
           url = "github:msteen/nixos-vscode-server";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        darwin = {
+          url = "github:LnL7/nix-darwin/master";
           inputs.nixpkgs.follows = "nixpkgs";
         };
 

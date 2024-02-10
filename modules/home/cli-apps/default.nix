@@ -30,17 +30,23 @@ in {
       pkgs.tree
       pkgs.tmux
       pkgs.nmap
-      pkgs.wol
+      #pkgs.wol
       pkgs.podman-compose
-      pkgs.distrobox
+      #pkgs.distrobox
       pkgs.p7zip
       pkgs.fortune
       pkgs.neofetch
       pkgs.dig
-      pkgs.usbutils
+      #pkgs.usbutils
       pkgs.pciutils
-      pkgs.psmisc
-
+      #pkgs.psmisc
+      pkgs.bash
+      pkgs.gcc
+      pkgs.git
+      pkgs.gnupg
+      pkgs.fortune
+      pkgs.neofetch
+      
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
