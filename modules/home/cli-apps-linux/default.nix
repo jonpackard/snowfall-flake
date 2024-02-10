@@ -19,29 +19,18 @@
     ...
 }:
 with lib; let
-  cfg = config.cli-apps;
+  cfg = config.cli-apps-linux;
 in {
-  options.cli-apps = {
-    enable = mkEnableOption "cli-apps";
+  options.cli-apps-linux = {
+    enable = mkEnableOption "cli-apps-linux";
   };
 
   config = mkIf cfg.enable {
     home.packages = [
-      pkgs.tree
-      pkgs.tmux
-      pkgs.nmap
-      pkgs.podman-compose
-      pkgs.p7zip
-      pkgs.fortune
-      pkgs.neofetch
-      pkgs.dig
-      pkgs.pciutils
-      pkgs.bash
-      pkgs.gcc
-      pkgs.git
-      pkgs.gnupg
-      pkgs.fortune
-      pkgs.neofetch
+      pkgs.wol
+      pkgs.distrobox
+      pkgs.usbutils
+      pkgs.psmisc
       
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the

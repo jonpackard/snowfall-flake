@@ -24,6 +24,7 @@ with lib;
   gui-apps.enable = true;
   vr.enable = true;
   cli-apps.enable = true;
+  cli-apps-linux.enable = true;
 
   # Enable vscode-server service (external module)
   # services.vscode-server.enable = true;
