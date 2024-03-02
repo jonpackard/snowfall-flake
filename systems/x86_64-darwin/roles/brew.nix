@@ -41,6 +41,7 @@
       "zoom"
       "vlc"
       "vscodium"
+      "warp"
     ];
     masApps = {
 #      DaisyDisk = 411643860;
