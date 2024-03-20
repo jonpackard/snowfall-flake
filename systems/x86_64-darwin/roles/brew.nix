@@ -42,6 +42,7 @@
       "vlc"
       "vscodium"
       "warp"
+      "steam"
     ];
     masApps = {
 #      DaisyDisk = 411643860;
