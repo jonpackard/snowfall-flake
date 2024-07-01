@@ -239,7 +239,7 @@
         "nixpkgs22-11": "nixpkgs22-11",
         "nur": "nur",
         "snowfall-lib": "snowfall-lib",
-        "unstable": "unstable",
+        "latest": "latest",
         "vscode-server": "vscode-server"
       }
     },
@@ -310,7 +310,7 @@
         "type": "github"
       }
     },
-    "unstable": {
+    "latest": {
       "locked": {
         "lastModified": 1719690277,
         "narHash": "sha256-0xSej1g7eP2kaUF+JQp8jdyNmpmCJKRpO12mKl/36Kc=",
@@ -321,7 +321,7 @@
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "nixos-latest",
         "repo": "nixpkgs",
         "type": "github"
       }

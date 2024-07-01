@@ -4,8 +4,8 @@
 
 {
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-        unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        latest.url = "github:nixos/nixpkgs/nixos-latest";
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release
         nur.url = "github:nix-community/NUR"; # Needed for darwin
 		    nixos-wsl.url = "github:nix-community/nixos-wsl"; # Needed for WSL
@@ -29,9 +29,6 @@
           url = "github:LnL7/nix-darwin/master";
           inputs.nixpkgs.follows = "nixpkgs";
         };
-
-        # Fixes "attribute latest missing" error.
-        snowfall-lib.inputs.flake-utils-plus.url = "github:fl42v/flake-utils-plus";
 
     };
 
