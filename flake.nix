@@ -4,8 +4,8 @@
 
 {
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-        latest.url = "github:nixos/nixpkgs/nixos-latest";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+        unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release
         nur.url = "github:nix-community/NUR"; # Needed for darwin
 		    nixos-wsl.url = "github:nix-community/nixos-wsl"; # Needed for WSL

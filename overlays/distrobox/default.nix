@@ -9,7 +9,7 @@
 { channels, ... }:
 
 final: prev: {
-    # For example, to pull a package from latest NixPkgs make sure you have the
-    # input `latest = "github:nixos/nixpkgs/nixos-latest"` in your flake.
-    inherit (channels.latest) distrobox;
+    # For example, to pull a package from unstable NixPkgs make sure you have the
+    # input `unstable = "github:nixos/nixpkgs/nixos-unstable"` in your flake.
+    inherit (channels.unstable) distrobox;
 }
