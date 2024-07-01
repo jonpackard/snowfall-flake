@@ -30,6 +30,9 @@
           inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        # Fixes "attribute latest missing" error.
+        snowfall-lib.inputs.flake-utils-plus.url = "github:fl42v/flake-utils-plus";
+
     };
 
     outputs = inputs:
