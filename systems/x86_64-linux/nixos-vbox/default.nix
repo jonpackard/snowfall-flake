@@ -28,6 +28,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable Tailscale VPN module
+  tailscale.enable = true;
+
   virtualisation.virtualbox.guest.enable = true;
 
   # Bootloader.
