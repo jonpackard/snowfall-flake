@@ -31,8 +31,8 @@
   services.xserver.displayManager.gdm.autoSuspend = false; # Disable suspend at the GDM login screen
 
   # Enable TLP power management
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
+  # services.power-profiles-daemon.enable = false;
+  # services.tlp.enable = true;
 
   # Enable Tailscale VPN module
   tailscale.enable = true;
