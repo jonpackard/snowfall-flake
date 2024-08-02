@@ -8,8 +8,10 @@
 # All other arguments for this function are your flake inputs.
 { channels, ... }:
 
-final: prev: {
-    # For example, to pull a package from unstable NixPkgs make sure you have the
-    # input `unstable = "github:nixos/nixpkgs/nixos-unstable"` in your flake.
-    inherit (channels.nixpkgs22-11) pcloud;
+  self: super: {
+    libbluray = super.libbluray.override {
+      withAACS = true;
+      withBDplus = true;
+  };
+
 }
