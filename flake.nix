@@ -31,6 +31,11 @@
           inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        nix-index-database = {
+          url = "github:nix-community/nix-index-database";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
     };
 
     outputs = inputs:
@@ -50,6 +55,11 @@
             # Add modules to a specific home.
             homes.users."jonathan@jon-tower".modules = with inputs; [
               vscode-server.homeModules.default
+            ];
+
+            # Add modules to a all homes.
+            homes.modules = with inputs; [
+              nix-index-database.hmModules.nix-index
             ];
 
             # Add modules to a specific system.
