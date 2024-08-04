@@ -7,8 +7,9 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
         unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release are needed for pcloud as the current vesion is broken.
-        nur.url = "github:nix-community/NUR"; # Needed for darwin
-		    nixos-wsl.url = "github:nix-community/nixos-wsl"; # Needed for WSL
+        nur.url = "github:nix-community/NUR"; # Needed for darwin.
+        nixos-wsl.url = "github:nix-community/nixos-wsl"; # Needed for WSL.
+        nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # Needed for hardware specific modules.
 
         snowfall-lib = {
           url = "github:snowfallorg/lib";
@@ -54,6 +55,10 @@
             # Add modules to a specific system.
             systems.hosts.jwp-nixos-wsl.modules = with inputs; [
               nixos-wsl.nixosModules.default
+            ];
+
+            systems.hosts.pinta.modules = with inputs; [
+              nixos-hardware.nixosModules.microsoft-surface-common
             ];
         };
 }
