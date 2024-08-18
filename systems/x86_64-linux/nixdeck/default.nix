@@ -56,7 +56,6 @@
   jovian.steam.desktopSession = "plasma";
 
   # Enable bluetooth
-  jovian.steamos.enableBluetoothConfig = true;
   hardware.bluetooth.enable = true;
 
   # Use the systemd-boot EFI boot loader.
