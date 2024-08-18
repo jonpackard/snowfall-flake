@@ -36,6 +36,11 @@
           inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        jovian-nixos = {
+          url = "github:Jovian-Experiments/Jovian-NixOS";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
     };
 
     outputs = inputs:
@@ -52,6 +57,9 @@
               allowUnfree = true;
             };
 
+            # Specify nixpkgs channel for a system
+            systems.hosts.nixdeck.channelName = "unstable";
+
             # Add modules to a specific home.
             homes.users."jonathan@jon-tower".modules = with inputs; [
               vscode-server.homeModules.default
@@ -65,6 +73,10 @@
             # Add modules to a specific system.
             systems.hosts.jwp-nixos-wsl.modules = with inputs; [
               nixos-wsl.nixosModules.default
+            ];
+
+            systems.hosts.nixdeck.modules = with inputs; [
+              jovian-nixos.nixosModules.default
             ];
 
             systems.hosts.pinta.modules = with inputs; [
