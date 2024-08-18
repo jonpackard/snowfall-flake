@@ -55,6 +55,10 @@
   # Set Steam desktop mode session
   jovian.steam.desktopSession = "plasma";
 
+  # Enable bluetooth
+  jovian.steamos.enableBluetoothConfig = true;
+  hardware.bluetooth.enable = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
