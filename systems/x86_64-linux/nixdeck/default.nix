@@ -28,17 +28,11 @@
       ./hardware-configuration.nix
     ];
 
-  services.xserver.displayManager.gdm.autoSuspend = false; # Disable suspend at the GDM login screen
-
-  # Enable TLP power management
-  # services.power-profiles-daemon.enable = false;
-  # services.tlp.enable = true;
-
   # Enable Tailscale VPN module
   tailscale.enable = true;
 
-  # Enable Gnome with X11 module
-  # gnome-x11.enable = true;
+  # Enable plasma desktop manager.
+  services.desktopManager.plasma6.enable = true;
 
   # Enable pcloud app module
   pcloud.enable = true;
@@ -57,6 +51,9 @@
 
   # Set Steam Deck GUI user
   jovian.steam.user = "jonathan";
+
+  # Set Steam desktop mode session
+  jovian.steam.desktopSession = "plasma";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
