@@ -49,7 +49,6 @@ in {
       pkgs.virt-manager
       pkgs.gimp
       pkgs.inkscape
-      pkgs.gnome.gnome-tweaks
       pkgs.signal-desktop
       pkgs.freerdp
     ];
