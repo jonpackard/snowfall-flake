@@ -37,7 +37,7 @@ in {
       pkgs.vscodium
       pkgs.element-desktop
       pkgs.prusa-slicer
-      pkgs.cura
+      #pkgs.cura #broken in unstable/master?
       pkgs.blender
       pkgs.freecad
       pkgs.appimage-run

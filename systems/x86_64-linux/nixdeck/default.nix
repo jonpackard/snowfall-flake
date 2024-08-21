@@ -55,6 +55,19 @@
   # Set Steam desktop mode session
   jovian.steam.desktopSession = "plasma";
 
+  # Enable Decky Loader
+  jovian.decky-loader.enable = true;
+  # jovian.decky-loader.user = "jonathan";
+
+  # Enable nix-ld
+  programs.nix-ld.enable = true; # Allows running unpatched dynamic libraries in NixOS
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    bluez
+    pciutils
+  ];
+  
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
@@ -117,6 +130,8 @@
     git
     hplip
     cryptsetup
+    maliit-keyboard
+    python3
   ];
 
   # Enable the OpenSSH daemon.

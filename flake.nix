@@ -4,7 +4,8 @@
 
 {
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs22-11.url = "github:nixos/nixpkgs/nixos-22.11"; # Nix Packages from 22.11 release are needed for pcloud as the current vesion is broken.
         nur.url = "github:nix-community/NUR"; # Needed for darwin.
@@ -17,9 +18,15 @@
         };
 
         home-manager = {
-          url = "github:nix-community/home-manager/release-24.05";
+          #url = "github:nix-community/home-manager/release-24.05";
+          url = "github:nix-community/home-manager/master";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        #home-manager-master = {
+        #  url = "github:nix-community/home-manager/master";
+        #  inputs.nixpkgs.follows = "nixpkgs";
+        #};
 
         vscode-server = {
           url = "github:msteen/nixos-vscode-server";
@@ -55,6 +62,9 @@
 
             channels-config = {
               allowUnfree = true;
+              permittedInsecurePackages = [
+                "jitsi-meet-1.0.8043"
+              ];
             };
 
             # Specify nixpkgs channel for a system
@@ -76,11 +86,12 @@
             ];
 
             systems.hosts.nixdeck.modules = with inputs; [
-              jovian-nixos.nixosModules.default
+              jovian-nixos.nixosModules.default  # Steam deck modules
             ];
 
             systems.hosts.pinta.modules = with inputs; [
               nixos-hardware.nixosModules.microsoft-surface-common
             ];
+
         };
 }
