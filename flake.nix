@@ -10,6 +10,7 @@
         nur.url = "github:nix-community/NUR"; # Needed for darwin.
         nixos-wsl.url = "github:nix-community/nixos-wsl"; # Needed for WSL.
         nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # Needed for hardware specific modules.
+        flox.url = "github:flox/flox/v1.3.3"; # See flox.dev
 
         snowfall-lib = {
           url = "github:snowfallorg/lib";

@@ -34,6 +34,8 @@
   wsl.enable = true;
   wsl.defaultUser = "jonathan";
 
+  flox.enable = true; # See flox.dev
+
   # Enable Tailscale VPN module
   # Note: Tailscale is not recommended in WSL.
   # Note: See https://tailscale.com/kb/1295/install-windows-wsl2#considerations
