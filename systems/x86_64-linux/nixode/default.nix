@@ -28,6 +28,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable Flox # See flox.dev
+  flox.enable = true;
+
   # Enable Tailscale VPN module
   tailscale.enable = true;
 
