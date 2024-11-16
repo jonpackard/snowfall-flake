@@ -28,6 +28,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable Flox - See flox.dev
+  flox.enable = true;
+
   # Enable Tailscale VPN module
   tailscale.enable = true;
 
@@ -110,7 +113,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jonathan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "gamemode" ]; # Enable ‘sudo’ for the user.
     # User packages defined in home-manager.
   };
 
@@ -118,6 +121,7 @@
   users.users.brandon = {
     isNormalUser = true;
     # extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "gamemode" ];
     # User packages defined in home-manager.
   };
   

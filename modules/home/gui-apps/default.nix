@@ -37,9 +37,9 @@ in {
       pkgs.vscodium
       pkgs.element-desktop
       pkgs.prusa-slicer
-      #pkgs.cura #broken in unstable/master?
+      pkgs.cura #broken in unstable/master?
       pkgs.blender
-      pkgs.freecad
+      pkgs.freecad #broken in unstable/master?
       pkgs.appimage-run
       pkgs.anydesk
       pkgs.discord
