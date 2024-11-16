@@ -33,7 +33,7 @@ in {
     ];
     
     nix.settings = {
-      experimental-features = "nix-command flakes";
+      experimental-features = lib.mkForce "nix-command flakes";
       substituters = [
         "https://cache.flox.dev"
       ];
