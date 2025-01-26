@@ -29,6 +29,9 @@
       ./pihole.nix
     ];
 
+  # Enable Flox
+  flox.enable = true;
+
   # Enable Tailscale VPN module
   tailscale.enable = true;
 
